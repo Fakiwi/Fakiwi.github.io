@@ -8,33 +8,47 @@ body {
 }
 
 .main-content {
-  max-width: 500px;
+  max-width: 550px;
   margin: 0 auto;
 }
 
 .row {
-  background-color: #eee;
+  background-color: rgb(225, 234, 236);
   padding: 5px;
   margin: 5px 0;
 }
 
 .row-item-1, .row-item-2 {
-  padding: 10px 0;
+  padding: 10px 5px;
 }
 
 .row-item-1 {
   display: inline-block;
-  width: 35%;
+  width: 39%;
   vertical-align: top;
+  text-align: right;
 }
 
 .row-item-2 {
   display: inline-block;
-  width: 49%;
+  width: 60%;
   word-wrap: break-word;
 }
 
 h3, p, a {
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width: 640px) {
+  .row-item-1, .row-item-2 {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .main-content {
+    max-width: 75%;
+    min-width: 350px;
+  }
 }
