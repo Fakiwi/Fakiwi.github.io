@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.main-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.row {
+  background-color: #eee;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.row-item-1, .row-item-2 {
+  padding: 10px 0;
+}
+
+.row-item-1 {
+  display: inline-block;
+  width: 35%;
+  vertical-align: top;
+}
+
+.row-item-2 {
+  display: inline-block;
+  width: 49%;
+  word-wrap: break-word;
+}
+
+h3, p, a {
+  margin: 0;
+  padding: 0;
+}
