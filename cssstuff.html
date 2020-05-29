@@ -1,0 +1,145 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      overflow: none;
+    }
+
+    body{
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .animation{
+      width: 100vw;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #divrow1{
+      
+      width: 100vw;
+      height: 120px;
+      position: fixed;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      
+      
+      
+    }
+
+    .row1 {
+      padding: 8.4vw;
+      background-color: rgb(89, 179, 170);
+      transition: opacity 1s;
+      opacity: 0;
+      
+      
+      
+    }
+    #divrow2{
+      background-color: rgb(255, 255, 255);
+      width: 100vw;
+      height: 120px;
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      
+      
+    }
+    .row2 {
+      
+      padding: 50px;
+      background-color: rgb(158, 228, 187);
+      transition: padding 1s;
+      transition-timing-function: cubic-bezier(1, 0, 0, 1);
+      transition-delay: .01s;
+    }
+    
+    @media only screen and (max-width: 640px){
+      .row1 {
+        padding: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <button onclick="collison()">Collision Boxes</button>
+  </div>
+  <div class="animation">
+  <div id="divrow2">
+    <div id="under1" class="row2"></div>
+    <div id="under2" class="row2"></div>
+    <div id="under3" class="row2"></div>
+    <div id="under4" class="row2"></div>
+    <div id="under5" class="row2"></div>
+    <div id="under6" class="row2"></div>
+  </div>
+  
+  <div id="divrow1">
+    <div id="over1" class="row1"></div>
+    <div id="over2" class="row1"></div>
+    <div id="over3" class="row1"></div>
+    <div id="over4" class="row1"></div>
+    <div id="over5" class="row1"></div>
+    <div id="over6" class="row1"></div>
+  </div>
+</div>
+  
+
+  <script>
+    for(let i = 1; i < 7; i++){
+      let hover = document.getElementById("over" + i);
+      hover.onmouseenter = myFunc;
+      hover.onmouseleave = myFunc2;
+      function myFunc(){
+        let under = document.getElementById("under" + i);
+        under.style.padding = "10px";
+      }
+      function myFunc2(){
+        let under = document.getElementById("under" + i);
+        under.style.padding = "50px";
+      }
+    }
+
+    function collison(){
+      
+      let a = document.getElementById("divrow1");
+      let b = document.getElementsByClassName("row1");
+      
+      /*if(a.style.opacity == 0){
+          a.style.opacity = .2;
+          
+        } else {
+          a.style.opacity = 0;
+          
+        }*/
+      
+        for( let i = 0; i < b.length; i++){
+        if(b[i].style.opacity == 0){
+          b[i].style.opacity = .5;
+        } else {
+          b[i].style.opacity = 0;
+        }
+        }
+    
+            
+    }
+  </script>
+  
+</body>
+</html>
